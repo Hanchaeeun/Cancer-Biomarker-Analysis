@@ -1,6 +1,4 @@
 import os
-import glob
-import numpy as np
 import pandas as pd
 
 def Load_Labeling(file, cancer_list):
@@ -9,7 +7,7 @@ def Load_Labeling(file, cancer_list):
     path_list = [x for x in path_list if x != '.ipynb_checkpoints']
     cancer_df = pd.DataFrame()
     for idx, f in enumerate(path_list):
-        cancer = cancer_list[idx] # 불러올 암 이름
+        cancer = cancer_list[idx] # Load Cancer name
         cancer_txt = ''.join([f for f in path_list if f[:4] == cancer])
         print(f'cancer : {cancer}\nfile : {cancer_txt}') 
         # file load
